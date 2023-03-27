@@ -1,4 +1,3 @@
-
 /*
 Core colours 
   colour: #1d4e89;
@@ -7,6 +6,31 @@ Core colours
   colour: #fbd1a2;
   colour: #f79256;
   */
+/* In mobile mode we don't need flex, we only need flex when the screen size gets too large */
+.body {
+  display: block;
+}
+
+/* This makes our flex box items try to be their largest size */
+.form1  > * {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;  
+    border-width: 0rem;
+    font-size: 1.5rem;
+  }
+
+@media screen and (min-width: 650px) {
+  .form1 {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .form1 > * + * {
+    margin-left: 2rem;
+  }
+}
 
 * {
   font-family:Arial, Helvetica, sans-serif;
@@ -23,8 +47,6 @@ Core colours
 
     width: 4rem;
     height: 4rem;
- 
-
 }
 
 h1 {
@@ -36,6 +58,7 @@ h1 {
   PAGE / BODY
 */
 body {
+  min-width: 730px;
   font-family: Arial, Helvetica, sans-serif;
   color: #fbd1a2;
   background-color: #1d4e89;
@@ -89,7 +112,7 @@ body {
 .todolist1 * {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   border-width: 0rem;
 
   gap: 1rem;
@@ -101,6 +124,8 @@ body {
 .todolist1 div {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+
   flex-grow: 1;
   align-items: center;
 
