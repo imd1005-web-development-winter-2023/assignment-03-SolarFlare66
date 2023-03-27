@@ -1,43 +1,185 @@
 /*
-  CSS File
-*/
+Core colours 
+  colour: #1d4e89;
+  colour: #00b2ca;
+  colour: #7dcfb6;
+  colour: #fbd1a2;
+  colour: #f79256;
+  */
+/* In mobile mode we don't need flex, we only need flex when the screen size gets too large */
+.body {
+  display: block;
+}
 
-/*
- VARIABLES
-*/
-:root {
-  /* Core colours */
-  /* https://coolors.co/palette/e63946-f1faee-a8dadc-457b9d-1d3557 */
-  --colour-amaranth: #e63946;
-  --colour-peppermint: #f1faee;
-  --colour-aquaisland: #a8dadc;
-  --colour-wedgewood: #457b9d;
-  --colour-cello: #1d3557;
+/* This makes our flex box items try to be their largest size */
+.form1  > * {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;  
+    border-width: 0rem;
+    font-size: 1.5rem;
+  }
 
-  /* Header configuration */
-  --header-heading-colour: var(--colour-peppermint);
+.body > * {
+  margin: 0.2rem;
+  justify-self: center;
+  align-self:center ;
+}
 
-  /* Body configuration */
-  --body-default-colour: var(--colour-cello);
-  --body-background-colour: var(--colour-peppermint);
+@media screen and (min-width: 650px) {
+  .form1 {
+    display: flex;
+    flex-direction: row;
+
+  }
+
+  .form1 > * + * {
+    margin-left: 2rem;
+  }
+}
+
+
+
+
+* {
+  font-family:Arial, Helvetica, sans-serif;
+}
+.title{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: .5rem;
+}
+
+.icon{
+    background-size: 2rem;
+
+    width: 4rem;
+    height: 4rem;
+}
+
+h1 {
+  font-size:3rem;
+  align-self:center;
 }
 
 /*
   PAGE / BODY
 */
 body {
+  min-width: 735px;
   font-family: Arial, Helvetica, sans-serif;
-  color: var(--body-default-colour);
-  background-color: var(--body-background-colour);
+  color: #fbd1a2;
+  background-color: #1d4e89;
+  box-sizing: border-box;
+  border-width: 0rem;
+  filter: drop-shadow(0 0 0.75rem black);
 }
 
-main {
-  min-height: 100vh;
-
+.hero {
+  margin: 5rem;
+  border-width: 0rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  border-radius: 3rem;
+  background-color: #00b2ca;
+  padding: 1rem;
 }
+
+.form1 {
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;  
+  border-width: 0rem;
+  font-size: 1.5rem;
+}
+
+.inputTodo{
+  border-width: 0rem;
+}
+
+.list1 {
+  display: flex;
+  padding: 1rem;
+  flex-direction: row;
+  border-width: 0rem;
+  width: 100%;
+  justify-content: center;
+
+}
+
+.todolist1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0;
+  width: 100%;
+
+}
+
+.todolist1 * {
+  display: flex;
+  flex-direction: row;
+  border-width: 0rem;
+
+  gap: 1rem;
+  width: 100%;
+  border-radius: 0.4rem;
+  padding: 0.4rem;
+}
+
+.todolist1 div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  flex-grow: 1;
+  align-items: center;
+
+  color: black;
+  border-radius: 0.4rem;
+  border-width: 0rem;
+  background-color: white;
+  padding: 1rem;
+}
+
+.todolist1 div p {
+  overflow-wrap: break-word;
+  max-width: 100%;
+  word-break: break-word;
+}
+
+.todolist1 button {
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
+  
+  border-radius: 0.5rem;
+  border-width: 0rem;
+  background-color: #fbd1a2;
+}
+
+.noTask {
+  padding: 1rem;
+}
+
+.h2 {
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
 
 /*
   Screen reader text utility class
