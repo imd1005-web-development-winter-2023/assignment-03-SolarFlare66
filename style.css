@@ -149,7 +149,7 @@ body {
 .todolist1 div p {
   overflow-wrap: break-word;
   max-width: 100%;
-  
+  word-break: break-word;
 }
 
 .todolist1 button {
